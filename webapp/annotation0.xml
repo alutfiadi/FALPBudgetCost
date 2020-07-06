@@ -1,0 +1,316 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZADPLWIF_Q002_AL_SRV/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="ZADPLWIF_Q002_AL_SRV"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="BudgetCostMature.annotation0.ZADPLWIF_Q002_AL_SRV">
+			<Annotations Target="Metadata.ZADPLWIF_Q002_ALResult">
+				<Annotation Term="UI.KPI" Qualifier="KPIBudget">
+					<Record Type="UI.KPIType">
+						<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#KPIBudget"/>
+						<PropertyValue Property="DataPoint" Path="@UI.DataPoint#DPBudget"/>
+						<PropertyValue Property="ID" String="KPIBudget"/>
+						<PropertyValue Property="Detail">
+							<Record Type="UI.KPIDetailType">
+								<PropertyValue Property="DefaultPresentationVariant" Path="@UI.PresentationVariant#KPIBudget"/>
+								<PropertyValue Property="SemanticObject" String="test"/>
+								<PropertyValue Property="Action" String="test"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="KPIBudget">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Text" String="Budget by Country"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="KPIBudget">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Bar"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>A003N8BXHSLMV9XEHJE97VSA5R</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="A003N8BXHSLMV9XEHJE97VSA5R"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A4ZADPLWIFCOUNTRY</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A4ZADPLWIFCOUNTRY"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="KPIBudget">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#KPIBudget</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType">
+									<PropertyValue Property="Property" PropertyPath="A003N8BXHSLMV9XEHJE97VSA5R"/>
+									<PropertyValue Property="Descending" Bool="true"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionPresentationVariant" Qualifier="KPICost">
+					<Record Type="UI.SelectionPresentationVariantType">
+						<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#KPICost"/>
+						<PropertyValue Property="PresentationVariant" Path="@UI.PresentationVariant#KPICost"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionPresentationVariant" Qualifier="Default">
+					<Record Type="UI.SelectionPresentationVariantType">
+						<PropertyValue Property="SelectionVariant" Path="@UI.SelectionVariant#Default"/>
+						<PropertyValue Property="PresentationVariant" Path="@UI.PresentationVariant#Default"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="KPICost">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Text" String="KPI Net Value"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionVariant" Qualifier="Default">
+					<Record Type="UI.SelectionVariantType">
+						<PropertyValue Property="Text" String="Default Net value"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="KPICOST">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#KPICost</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType">
+									<PropertyValue Property="Property" PropertyPath="A4ZADPLWIFYEARS2"/>
+									<PropertyValue Property="Descending" Bool="true"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant" Qualifier="Default">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="Visualizations">
+							<Collection>
+								<AnnotationPath>@UI.Chart#ChartDefault</AnnotationPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="KPICost">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Donut"/>
+						<PropertyValue Property="Description" String="Cost by Year"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>A003N8BXHSLMV9XEHJE97VSGHB</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#DPCost"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+									<PropertyValue Property="Measure" PropertyPath="A003N8BXHSLMV9XEHJE97VSGHB"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A4ZADPLWIFYEARS2</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A4ZADPLWIFYEARS2"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Chart" Qualifier="ChartDefault">
+					<Record Type="UI.ChartDefinitionType">
+						<PropertyValue Property="ChartType" EnumMember="UI.ChartType/Column"/>
+						<PropertyValue Property="Description" String="Cost Budget by Year"/>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>A003N8BXHSLMV9XEHJE97VSA5R</PropertyPath>
+								<PropertyPath>A003N8BXHSLMV9XEHJE97VSGHB</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>A4ZADPLWIFYEARS2</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="MeasureAttributes">
+							<Collection>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="A003N8BXHSLMV9XEHJE97VSA5R"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+									<PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#DPBudget"/>
+								</Record>
+								<Record Type="UI.ChartMeasureAttributeType">
+									<PropertyValue Property="Measure" PropertyPath="A003N8BXHSLMV9XEHJE97VSGHB"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartMeasureRoleType/Axis1"/>
+									<PropertyValue Property="DataPoint" AnnotationPath="@UI.DataPoint#DPCost"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="DimensionAttributes">
+							<Collection>
+								<Record Type="UI.ChartDimensionAttributeType">
+									<PropertyValue Property="Dimension" PropertyPath="A4ZADPLWIFYEARS2"/>
+									<PropertyValue Property="Role" EnumMember="UI.ChartDimensionRoleType/Category"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record Type="UI.HeaderInfoType">
+						<PropertyValue Property="TypeName" String="Hectare Actual Budget"/>
+						<PropertyValue Property="TypeNamePlural" String="Hectares Actual Budget"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="IDYear">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A4ZADPLWIFYEARS2"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCost">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A003N8BXHSLMV9XEHJE97VSGHB"/>
+						<PropertyValue Property="Title" String="Cost"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPBudget">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A003N8BXHSLMV9XEHJE97VSA5R"/>
+						<PropertyValue Property="Title" String="Budget"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPItem">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADPLWIFITEM"/>
+						<PropertyValue Property="Title" String="Category item"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCategory">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADPLWIFCATEGORY"/>
+						<PropertyValue Property="Title" String="Category"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCompany">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADPLWIFCOMPANY"/>
+						<PropertyValue Property="Title" String="Company"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPRegion">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADPLWIFREGION"/>
+						<PropertyValue Property="Title" String="Region"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPYear">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADPLWIFYEARS2"/>
+						<PropertyValue Property="Title" String="Year"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.DataPoint" Qualifier="DPCountry">
+					<Record Type="UI.DataPointType">
+						<PropertyValue Property="Value" Path="A4ZADPLWIFCOUNTRY"/>
+						<PropertyValue Property="Title" String="Country"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>A4ZADPLWIFYEARS2</PropertyPath>
+						<PropertyPath>A4ZADPLWIFCOUNTRY</PropertyPath>
+						<PropertyPath>A4ZADPLWIFREGION</PropertyPath>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A4ZADPLWIFYEARS2"/>
+							<PropertyValue Property="Label" String="Year"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A4ZADPLWIFCOUNTRY"/>
+							<PropertyValue Property="Label" String="Country"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A4ZADPLWIFREGION"/>
+							<PropertyValue Property="Label" String="Region"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A4ZADPLWIFCOMPANY_NAME"/>
+							<PropertyValue Property="Label" String="Company"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A4ZADPLWIFCATEGORY"/>
+							<PropertyValue Property="Label" String="Category"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A4ZADPLWIFITEM"/>
+							<PropertyValue Property="Label" String="Item"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A003N8BXHSLMV9XEHJE97VSA5R_F"/>
+							<PropertyValue Property="Label" String="Budget"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="A003N8BXHSLMV9XEHJE97VSGHB_F"/>
+							<PropertyValue Property="Label" String="Cost"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.ZADPLWIF_Q002_ALResult/A4ZADPLWIFYEARS2">
+				<Annotation Term="Common.ValueList">
+					<Record Type="Common.ValueListType">
+						<PropertyValue Property="CollectionPath" String="ZADPLWIF_Q002_ALResults"/>
+						<PropertyValue Property="PresentationVariantQualifier" String="KPICOST"/>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

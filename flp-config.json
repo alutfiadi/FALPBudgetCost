@@ -1,0 +1,34 @@
+{
+    "application": {
+        "id": "",
+        "title": "ZAL.BudgetCostMature.BudgetCostMature",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#BudgetCostMature-Display",
+        "navigationComponentName": "ZAL.BudgetCostMature",
+        "intentSemanticObject": "BudgetCostMature",
+        "intentAction": "Display",
+        "html5ApplicationName": "budgetcostmature",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "1cbb5002-0713-484e-9b19-cab9664c71a9"
+        ],
+        "contentPackages": [
+            "bc1b116e-eb74-461c-a875-23bfc1ae6863-1582701544842"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "StaticTile",
+        "title": "Budget vs Cost",
+        "subtitle": "Mature",
+        "searchKeywords": "Budget vs Cost,Mature",
+        "displayIconUrl": "sap-icon://filter-analytics",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "",
+        "refreshInterval": ""
+    }
+}
